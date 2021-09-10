@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="{% static 'cs/varbl.css' %}">
+	<link rel="stylesheet" href="{% static 'cs/style.css' %}">
+</head>
+ <script>
+function validateForm() {
+  var x = document.forms["myForm"]["Name"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+
+  }
+  var x = document.forms["myForm"]["address"].value;
+  if (x == "") {
+    alert("Adress must be filled out");
+    return false;
+  }
+  var x = document.forms["myForm"]["contact"].value;
+  if (x == "") {
+    alert("Contact must be filled out");
+    return false;
+  }
+  var x = document.forms["myForm"]["username"].value;
+  if (x == "") {
+    alert("User Name must be filled out");
+    return false;
+  }
+  var x = document.forms["myForm"]["email"].value;
+
+  if (x == "") {
+    alert("Email must be filled out");
+    return false;
+  }
+  var x = document.forms["myForm"]["pwd"].value;
+  if (x == "") {
+    alert("Password must be filled out");
+    return false;
+  }
+
+ var a = document.forms["myForm"]["pwd"].value;
+ var b = document.forms["myForm"]["pwd1"].value;
+   if (a != b) {
+    alert("Passwords must Equal");
+    return false;
+
+  }
+ var cnt = document.forms["myForm"]["contact"].value;
+   var l=cnt.length;
+   if (l != 10) {
+    alert("contact contain 10 digits");
+    return false;
+}
+   if (isNaN(cnt)) {
+    alert("contact have only numbers");
+    return false;
+}
+ var str = document.forms["myForm"]["email"].value;
+   var h=str.includes("@");
+
+   if (h == false) {
+      alert("Invalid Email");
+      return false;
+   }
+    var i = document.forms["myForm"]["vimg"].value;
+  if (i == "") {
+    alert("plese upload id proof");
+    return false;
+  }
+     var i = document.forms["myForm"]["img"].value;
+  if (i == "") {
+    alert("plese your photo ...");
+    return false;
+  }
+}
+
+</script>
+<body>
+<header>
+	
+<div class="container">
+<a href="#"> logo </a>
+<nav>
+	<b><u><a href="#"> Home</a></u></b>
+<a href="{%url 'abt' %}"> About</a>
+
+<a href="{%url 'cnt' %}">Contact </a>
+</nav>
+</div>
+</header>
+	<main>
+	<section class="banner-container"style="background-image: url({% static 'img/car.jpg' %})">
+	<div class="container">
+	<div class="left">
+
+		<h1> Welcome the World of Cars</h1>
+		<p>We provide a a flexible service of car renting
+		RentSyst service is very easy to use. Within six months, we have successfully built perfect communication with customers. RentSyst is convenient to use, rich in functionality, quick to configure and implement.
+With RentSyst, we got rid of the work routine and automated the processes of the same type. It has become convenient to work with a large number of orders - nothing gets confused or lost. The effectiveness of the fleet has increased significantly! We are going to scale.
+The main advantages - everything is intuitive, the interface is adaptive, access to data in real-time mode. No flaws revealed.</p>
+		<a href="{%url 'logdis' %}" class="logn">LOgin</a>
+	</div>
+		<div class="right">
+			<h4> Register Here</h4>
+			<form action="" autocomplete="off"  method="post"  enctype="multipart/form-data" name="myForm" onsubmit="return validateForm()">
+				{%csrf_token%}
+				<div class="input-group">
+
+					 <input type="text" id="Name" name="Name" required>
+					<label for="Name"> Name</label>
+				</div>
+				<div class="input-group">
+
+					 
+           <textarea name="address"id="address" cols="20" rows="5"></textarea>
+					<label for="address">Address</label>
+				</div>
+				<div class="input-group">
+
+					<input type="text" id="contact" name="contact" required>
+					<label for="contact">Contact</label>
+				</div>
+				<div class="input-group">
+
+					<input type="text" id="email" name="email" required>
+					<label for="email">Email</label>
+				</div>
+				<div class="input-group">
+
+					<input type="text" name="username" required>
+					<label for="username">User Name</label>
+				</div>
+				<div class="input-group">
+
+					<input type="password" name="pwd" id="pwd"required>
+					<label for="pwd">Password</label>
+				</div>
+				<div class="input-group">
+
+					<input type="password" name="pwd1" required>
+					<label for="pwd1"> Retype Password</label>
+				</div>
+				<div class="input-group">
+
+					<input type="file" name="img">
+					<label for="img"> Select Picture</label>
+				</div>
+				<div class="input-group">
+
+					<input type="file" name="vimg">
+					<label for="vimg"> Select ID Proof in JPG Format</label>
+				</div>
+
+				<div class="submit-section">
+					<input type="submit" class="submit-button" formaction="{%url 'userRegister' %}" value="Register">
+				</div>
+			</form>
+		</div>
+
+
+	
+	</div>
+</section>
+<div class="car">
+	<h1>Our Cars</h1></div>
+
+<section class="section-two">
+	
+
+
+<div class="card-container">
+	<div class="image-container">
+		<img src="{% static 'img/car-2.jpg' %}" alt="">
+	</div><h1> Mahendra</h1>
+</div>
+
+
+<div class="card-container">
+	<div class="image-container">
+		<img src="{% static 'img/car-5.jpg' %}"  alt="">
+	</div><h1> hImal</h1>
+</div>
+<div class="card-container">
+	<div class="image-container">
+		<img src="{% static 'img/car-6.jpg' %}"  alt="">
+	</div><h1> its ma car</h1>
+</div>
+
+
+</section>
+<div class="cus">
+	<h1> Customers</h1></div>
+
+<section class="section-two">
+	
+
+	<div class="card-container">
+	<div class="image-container">
+		<img src="{% static 'img/driver-3.jpg' %}"  alt="">
+	</div><h1> Christy</h1>
+</div>
+<div class="card-container">
+	<div class="image-container">
+		<img src="{% static 'img/driver-4.jpg' %}"  alt="">
+	</div><h1> Arjun Reddy</h1>
+</div>
+<div class="card-container">
+	<div class="image-container">
+		<img src="{% static 'img/driver-5.jpg' %}"  alt="">
+	</div><h1> Nayana Mohan</h1>
+</div>
+</section>
+
+
+	
+	</main>
+	<footer>
+		Designed And Devoloped By <span>Ambili Sunil</span>
+	</footer>
+</body>
+</html>
+

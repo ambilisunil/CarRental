@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+     <style>
+body {background-color: powderblue;}
+h3  {color: white;}
+p   {color: red;}
+body  {text-align:center;}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: white;
+  border: 10;
+  color: black;
+  padding: 10px 28px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>Car Return</title>
+</head>
+<body  style="background-image: url({% static 'car-2.jpg' %})">
+
+<h1> Car Return </h1>
+
+<form method="post" action="{% url 'carupdated' %}" enctype="multipart/form-data">
+{%csrf_token%}
+      <div class="col">
+        <div class="hide-md-lg">
+            <br>
+            <br>
+
+        </div><h3><b>
+          Select  CAR Id:
+
+          <select id="trans" name="id">
+              {% for item in uc %}
+  <option value="{{ item.id }}">{{ item.id }}</option>
+
+              {% endfor %}
+</select>
+<br><br>
+
+
+
+
+
+        <input type="submit" name="Ok" value="Ok" >
+          <br>
+          <br>
+         </b></h3>
+
+      </div>
+      </div>
+      </div>
+    </div>
+  </form>
+
+</div>
+</body>
+</html>l>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+     <script>
+    function validateFormsss() {
+    alert("jhj");
+  var x = document.forms["frm1"]["id"].value;
+  if (x == "") {
+    alert("Select relevent id);
+    return false;
+
+}
+  }</script>
+     <style>
+body {background-color: powderblue;}
+h3  {color: white;}
+p   {color: red;}
+body  {text-align:center;}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: white;
+  border: 10;
+  color: black;
+  padding: 10px 28px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>Car Return</title>
+</head>
+<body  style="background-image: url({% static 'car-2.jpg' %})">
+
+<h1> Car Return </h1>
+
+<form method="post" action="{% url 'cardlt' %}" name="frm1" onsubmit="return validateFormsss()">
+{%csrf_token%}
+
+            <br>
+            <br>
+
+<h3><b>
+          Select  CAR Id:
+
+          <select id="trans" name="ids">
+              <option value="none">NONE</option>
+              {% for item in uc %}
+  <option value="{{ item.id }}">{{ item.id }}</option>
+
+              {% endfor %}
+
+</select>
+<br><br>
+
+
+
+
+
+        <input type="submit" name="Ok" value="Delete" >
+          <br>
+          <br>
+         </b></h3>
+
+
+  </form>
+
+
+</body>
+</html>l>

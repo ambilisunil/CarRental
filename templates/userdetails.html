@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+{% load static %}
+<script language="JavaScript">
+    function validateFormss() {
+  var x = document.forms["myForm2"]["Name"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  var x = document.forms["myForm2"]["address"].value;
+  if (x == "") {
+    alert("Adress must be filled out");
+    return false;
+  }
+  var x = document.forms["myForm2"]["contact"].value;
+  if (x == "") {
+    alert("Contact must be filled out");
+    return false;
+  }
+
+  var x = document.forms["myForm2"]["email"].value;
+
+  if (x == "") {
+    alert("Email must be filled out");
+    return false;
+  }
+var cnt=document.myForm2.contact.value;
+
+   var l=cnt.length;
+   if (l != 10) {
+    alert("contact contain 10 digits");
+    return false;
+}
+   if (isNaN(cnt)) {
+    alert("contact have only numbers");
+    return false;
+}
+ var str = document.forms["myForm2"]["email"].value;
+   var h=str.includes("@");
+
+   if (h == false) {
+      alert("Invalid Email");
+      return false;
+   }
+}
+</script>
+<html>
+<head>
+    	<link rel="stylesheet" href="{% static 'cs/varbl.css' %}">
+	<link rel="stylesheet" href="{% static 'cs/usrdtl.css' %}">
+	<title>
+
+	</title>
+</head>
+<body style="background-image: url({% static 'img/car.jpg' %})">
+	<header>
+		<div class="container">
+			<h1> Haii   {{user.name}}</h1>
+			<img src="/uploads/{{user.u_image}}" width="200" height="200"></td>
+		</div>
+		</header>
+
+	<main>
+	<section class="banner-container">
+
+
+	<h4> Updte Profile</h4>
+<form action="" autocomplete="off"action="{% url 'update' %}" name="myForm2" onsubmit="return validateFormss()" >
+	{%csrf_token%}
+
+				<div class="input-group">
+
+					 <input type="text" name="Name"value="{{user.name}}">
+					<label for="name"> Name</label>
+				</div>
+				<div class="input-group">
+
+
+
+           <textarea name="address" cols="20" rows="5">{{user.address}}</textarea>
+					<label for="address">Address</label>
+				</div>
+				<div class="input-group">
+
+					<input type="text" name="contact" value="{{user.contact}}">
+					<label for="contact">Contact</label>
+				</div>
+				<div class="input-group">
+
+					<input type="text" name="email" value="{{user.email}}">
+					<label for="email">Email</label>
+				</div>
+
+				<div class="input-group">
+
+					<input type="file" name="img">
+					<label for="img"> Select Picture</label>
+				</div>
+
+				<div class="submit-section">
+					<input type="submit" class="submit-button" value="Update">
+				</div>
+			</form>
+
+
+
+  </form>
+  <div class="lin">
+
+
+</section></main>
+
+
+
+</body>
+</html>

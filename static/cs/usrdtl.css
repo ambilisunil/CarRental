@@ -1,0 +1,142 @@
+*{
+	box-sizing: border-box;
+
+
+}
+body{
+	margin: 0;
+	padding: 0;
+	font-family: Arial,Helvetica,sans-serif;
+
+		background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	align-items: center;
+	justify-content: center;
+
+}
+/* heder section */
+header{
+	width: 100%;
+	
+	padding: 20px ;
+	
+	top: 0;
+	align-items: center;
+	justify-content: center;
+	
+	color: white;
+	font-family: sans-serif;
+	height: 40px;
+	
+}
+header .container{
+
+	margin-top: 40px;
+	width: 100%;
+	margin-left:10px;
+	align-items: center;
+    justify-content: center;
+
+}
+h4{
+	font-size:20px;
+	width: 300px;
+	
+	margin-bottom: 30px;
+	color: rgb(136,136,136);
+	
+	justify-content: center;
+}
+.banner-container{
+	margin-top: 100%;
+	
+	
+	display: flex;
+	align-items: center;
+		display: flex;
+		flex-direction: column;
+	justify-content:center;
+	align-items: center;
+    width: 400px;
+    height: 581px;
+    margin-left: 850px;
+    margin-top: 1px;
+
+	background-color: white;
+	border-radius: 10px;
+	padding :40px 0;
+	box-shadow: 0 5px 6px rgba(0,0,0,0.219);
+
+	
+}
+	
+
+
+	
+
+
+
+.input-group{
+	width: 300px;
+	margin: 30px auto;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+
+}
+
+.input-group label{
+	color: rgb(165 165 165);
+	font-size: 14px;
+	position: absolute;
+	top: 10px;
+	transition: 1s ease-in-out;
+}
+.input-group input{
+	border: none;
+	padding: 7px;
+	margin: 5px;
+	outline: none;
+	color: var(--primary-color);
+	border-bottom: 1px solid #c9c9c98a;
+	
+}
+.input-group input:focus ~ label,
+.input-group input:valid ~ label{
+color: var(--primary-color);
+top: -10px;
+font-size: 12px;
+}
+.input-group input:focus,
+.input-group input:valid{
+border-color: : var(--primary-color);
+
+}
+.submit-section{
+	text-align: center;
+}
+
+.submit-button{
+	background-color: var(--primary-color);
+	color:white;
+	border: none;
+	padding: 10px;
+	margin-top: 15px;
+	border-radius: 5px;
+	width: 300px;
+	cursor: pointer;
+}
+
+.submit-button:hover {
+	box-shadow: 10 3px 6px silver;
+
+
+
+	
+}
+
+form{
+	margin-bottom: 30px;
+}

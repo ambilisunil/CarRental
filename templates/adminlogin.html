@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html>
+<head><link rel="stylesheet" href="{% static 'cs/varbl.css' %}">
+	<link rel="stylesheet" href="{% static 'cs/login.css' %}">
+	<title>
+
+	</title>
+</head>
+<body style="background-image: url({% static 'img/car.jpg' %})">
+	<header>
+		<div class="container">
+			<h1> Welocome To the World of Cars</h1>
+		</div>
+		</header>
+	<main>
+	<section class="banner-container">
+
+
+	<h4> Login Here</h4>
+<form method="post" action="{% url 'adminlogin' %}">
+{%csrf_token%}
+
+<div class="input-group">
+
+					 <input type="text" name="username" required>
+					<label for="username"> User Name</label>
+				</div>
+        <div class="input-group">
+
+					 <input type="password" name="password" required>
+					<label for="password"> PasswordS</label>
+				</div>
+
+        <div class="submit-section">
+					<input type="submit" class="submit-button" value="Login">
+				</div>
+
+
+
+
+  </form>
+  <div class="lin">
+
+<a href="{%url 'maindis' %}">Do You have NO Account. Please Click To Register</a> </div>
+</section></main>
+
+
+
+</body>
+</html>

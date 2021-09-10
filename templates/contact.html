@@ -1,0 +1,59 @@
+<html>
+{% load static %}
+<head>
+<link rel="stylesheet" href="{% static 'cs/varbl.css' %}">
+	<link rel="stylesheet" href="{% static 'cs/style.css' %}">
+</head>
+<body>
+<header>
+	
+<div class="container">
+<a href="#"> logo </a>
+<nav>
+
+
+		<a href="{%url 'hm' %}"> Home</a>
+<a href="{%url 'abt' %}"> About</a>
+
+<b><u><a href="{%url 'cnt' %}">Contact </a></b></u>
+</nav>
+</div>
+
+</header>
+	<main>
+	<section class="banner-container"style="background-image: url({% static 'img/car.jpg' %})">
+	<div class="container">
+
+		<div class="about" style="color:white">
+			<h1>CONTACT</h1>
+			<div class="input-group">
+Email:<span>ambilisunil1998@gmail.com</span>
+					
+					
+				</div>
+						<div class="input-group">
+Moblie:<span>7559038711</span>
+					
+					
+				</div>
+										<div class="input-group">
+Address:<span>Kattayil CarRentals,<br>pala,<br>pin:686574</span>
+					
+					
+				</div>
+				
+			
+		</div>
+
+
+	
+	</div>
+
+	</section>
+	</main>
+	<footer>
+		Designed And Devoloped By <span>Ambili Sunil</span>
+	</footer>
+</body>
+</html>
+

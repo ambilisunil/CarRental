@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+     <style>
+body {background-color: powderblue;}
+h3  {color: white;}
+p   {color: red;}
+body  {text-align:center;}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: white;
+  border: 10;
+  color: black;
+  padding: 10px 28px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>feedback</title>
+</head>
+<body  style="background-image: url({% static 'rnt.jpg' %})">
+
+<h1> Enter Feedback</h1>
+
+<form method="post" action="{% url 'feedback' %}"  enctype="multipart/form-data">
+{%csrf_token%}
+      <div class="col">
+        <div class="hide-md-lg">
+            <br>
+            <br>
+
+        </div><h3><b>
+          Enter feedback:
+
+        <input type="textarea" name="feed"><br><br>
+
+        <input type="submit" name="submit" value="submit">
+          <br>
+          <br>
+         </b></h3>
+
+      </div>
+      </div>
+      </div>
+    </div>
+  </form>
+
+</div>
+</body>
+</html>

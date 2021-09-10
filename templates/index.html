@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+h1   {color: black;
+background-color: white;
+text-align:center}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  	background-attachment: fixed;
+	background-position: center;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color: red;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: blue;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+</style>
+    </head>
+
+
+
+</head>
+<body style="background-image: url({% static 'bck.jpg' %})">
+<div class="navbar">
+  <a href="#home">Home</a>
+  <div class="subnav">
+    <button class="subnavbtn">Car <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="{%url 'cardis' %}">View</a>
+      <a href="{%url 'carreg' %}">Add Cars</a>
+      <a href="{%url 'dltcar' %}">delete car</a>
+
+      <a href="{%url 'carupdate' %}">update car car</a>
+
+    </div>
+  </div>
+
+  <div class="subnav">
+    <button class="subnavbtn">Customer Details <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="{%url 'list' %}">View Customers</a>
+
+      <a href="{%url 'feedadmin' %}">View Feedbacks</a>
+
+    </div>
+  </div>
+    <div class="subnav">
+    <button class="subnavbtn">Order Deatils <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="{%url 'viewtrans' %}">View Orders</a>
+      <a href="{% url 'adminaprove' %}">ApProve Oders</a>
+        <a href="{% url 'returnt' %}">Return Cars</a>
+
+
+    </div>
+  </div>
+    <div class="subnav">
+    <button class="subnavbtn">Account <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="{%url 'chp' %}">Change passwordr</a>
+<a href="{%url 'logout' %}">Logout</a>
+</div>
+    </div>
+
+<br>
+        <br>
+    <br>
+        <br>
+
+
+ <center> <h1>CAR RENTAL MANAGEMENT SYSTEM</h1></b></center>
+  <p></p>
+
+
+
+
+</body>
+</html>

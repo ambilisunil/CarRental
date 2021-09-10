@@ -1,0 +1,284 @@
+{% load static %}
+*{
+	box-sizing: border-box;
+
+
+}
+body{
+	margin: 0;
+	padding: 0;
+	font-family: Arial,Helvetica,sans-serif;
+
+}
+/* heder section */
+header{
+	width: 100%;
+	background-color: rgba(23, 23 ,23 , 0.15);
+	padding: 20px;
+	position: absolute;
+	top: 0;
+}
+header a{
+	text-decoration: none;
+	margin-right: 100px;
+	font-size: 14px;
+	letter-spacing: 1px;
+	color:rgb(255,255,255,0.719);
+	font-family: Tahoma;
+
+
+}
+/* heder section */
+
+
+.banner-container{
+	margin-top: 100px
+	width=100%;
+	height: 100vh;
+
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	display: flex;
+	align-items: center;
+	
+
+
+}
+header .container{
+	display: flex;
+	justify-content: space-between;
+	width: 1180px;
+
+}
+
+.banner-container .container{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+    width: 100%;
+
+
+}
+.left h1{
+	margin: 0;
+	font-size: 40px;
+	color: white;
+}
+
+.left p{
+	margin: 0;
+	font-size: 14px;
+	left-spacing: 1px;
+	color: rgba(255 ,255, 255, 0.884);
+	margin-top: 18px;
+	line-height: 28px;
+	margin-bottom: 18px;
+
+}
+
+.left{
+	width: 600px;
+
+
+	align-self: flex-start;
+	
+	
+
+}
+.logn{
+	color:var(--primary-color);
+	background-color: white;
+	border: none;
+	border-top: 100px;
+	padding: 12px 40px; 
+	border-radius: 6px;
+	margin-top: 200px;
+	color: blue;
+	font-weight: bold;
+	cursor: pointer;
+	text-decoration: none;
+	
+	
+}
+
+/* right section */
+.right{
+	width: 400px;
+	background-color: white;
+	border-radius: 10px;
+	padding :40px 0;
+	box-shadow: 0 5px 6px rgba(0,0,0,0.219);
+	height: 500px;
+	overflow: scroll;
+	scroll-behavior: smooth;
+
+
+}
+
+.right h4{
+	font-size:20px;
+	width: 300px;
+	margin: auto;
+	margin-bottom: 30px;
+	color: rgb(136,136,136);
+}
+.input-group{
+	width: 300px;
+	margin: 30px auto;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+}
+
+.input-group label{
+	color: rgb(165 165 165);
+	font-size: 14px;
+	position: absolute;
+	top: 10px;
+	transition: 1s ease-in-out;
+}
+.input-group input{
+	border: none;
+	padding: 7px;
+	margin: 5px;
+	outline: none;
+	color: var(--primary-color);
+	border-bottom: 1px solid #c9c9c98a;
+	
+}
+.input-group input:focus ~ label,
+.input-group input:valid ~ label{
+color: var(--primary-color);
+top: -10px;
+font-size: 12px;
+}
+.input-group input:focus,
+.input-group input:valid{
+border-color: : var(--primary-color);
+
+}
+.submit-section{
+	text-align: center;
+}
+
+.submit-button{
+	background-color: var(--primary-color);
+	color:white;
+	border: none;
+	padding: 10px;
+	margin-top: 15px;
+	border-radius: 5px;
+	width: 300px;
+	cursor: pointer;
+}
+}
+.submit-button hover{
+	box-shadow: 0 3px 6px silver;
+}
+
+.section-two{
+	display: flex;
+	justify-content: space-evenly;
+	align-self: center;
+	margin-top: 15px;
+
+}
+.card-container h1{
+	color: rgb(136,136,136);
+
+}
+.card-container{
+	width: 350px;
+	border-radius: 15px;
+	box-shadow: 10px 5px 26px rgb(121,121,121);
+	overflow: hidden;
+	text-align: center;
+
+}
+.image-container{
+	width: 100%;
+	height: 450px;
+	overflow: hidden;
+
+}
+.image-container img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 0.5s ease-in-out
+}
+.image-container img:hover{
+	transform: scale(1.1) rotate(-5deg);
+}
+
+/* end of wsection2*/
+
+
+
+footer{
+	text-align: center;
+	color: grey;
+	padding:30px;
+
+}
+footer span{
+	color: var(--primary-color);
+	font-weight: bold;
+}
+
+.cus{
+
+	align-self: flex-start;
+		display: flex;
+margin: 10px;
+ width: 100%;
+    margin-bottom: 100px;
+
+}
+
+.cus h1{
+	margin: 10;
+	font-size: 40px;
+	color: red;
+	align-content: center;
+		display: flex;
+	justify-content: space-around;
+	align-items: center;
+    width: 100%;
+    margin-bottom: 400px;
+    
+    background-color: rgb(165 165 165);
+    position: absolute;
+    overflow: hidden;
+
+}
+.car h1{
+	margin: 10;
+	font-size: 40px;
+	color: red;
+	align-content: center;
+		display: flex;
+	justify-content: space-around;
+	align-items: center;
+    width: 100%;
+    margin-bottom: 400px;
+    
+    background-color: rgb(165 165 165);
+    position: absolute;
+    overflow: hidden;
+
+}
+.car{
+
+	align-self: flex-start;
+		display: flex;
+margin: 10px;
+ width: 100%;
+    margin-bottom: 100px;
+
+}
+.aboutt{
+color:blue;
+}

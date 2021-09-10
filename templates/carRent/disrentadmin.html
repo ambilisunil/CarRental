@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <style>
+#customer {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customer td, #customer th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customer tr:nth-child(even){background-color: #f2f2f2;}
+
+#customer tr:hover {background-color: #ddd;}
+
+#customer th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image: url({% static 'car-2m.jpg' %})">
+<h1 align="center">CUSTOMER DETAILS
+    <form method="post" >
+        {%csrf_token%}
+</h1><h3>
+
+
+<table border="5" align="center" bgcolor="pink" id="customer">
+
+
+        <tr>
+  <b> <th>Transaction Id</th><th>Customer Id</th> <th>Car Id</th><th>Rent Start</th><th>Rent End</th><th>Rent Per Day</th> <th>Amount</th>
+  <th>Discount</th><th>Final Amountt</th><th>Status</th><th>REturn Status</th<>/b></tr>
+        {% for item in dct %} <tr>
+        <td>{{ item.id }}</td>
+        <td>{{ item.uid_id }}</td>
+        <td>{{ item.cid_id }}</td>
+        <td>{{ item.dateStart }}</td>
+        <td>{{ item.dateEnd }}</td>
+            <td>{{ item.rentPerday }}</td>
+        <td>{{ item.amnt }}</td>
+        <td>{{ item.discount }}</td>
+        <td>{{ item.finalAmount }}</td>
+        <td>{{ item.status }}</td>
+        <td>{{ item.returened }}</td>
+    </tr>
+       {% endfor %}
+
+</table></h3>
+
+<input type="submit" name="Ok" value="Ok" formaction="{% url 'disrentadmin' %}">
+</form>
+
+</body>
+</html>

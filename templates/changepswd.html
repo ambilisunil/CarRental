@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+     <style>
+body {background-color: powderblue;}
+h3  {color: black;}
+p    {color: red;}
+body  {text-align:center;}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: white;
+  border: 10;
+  color: black;
+  padding: 10px 28px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+</head>
+<body  style="background-image: url({% static 'car-2.jpg' %})">
+
+<h1> Change password</h1>
+<h2> Hi {{user.username}}</h2>
+
+<form method="post" action="{% url 'ch' %}">
+{%csrf_token%}
+      <div class="col">
+        <div class="hide-md-lg">
+            <br>
+            <br>
+
+        </div><h3><b>
+          Old Password:
+
+        <input type="text" name="pswd"><br><br>
+          New Password:
+           <input type="text" name="pswd1"><br><br>
+        Retype New password:
+        <input type="text" name="pswd2"><br><br>
+
+
+        <input type="submit" name="ch" value="Change password">
+          <br>
+          <br>
+         </b></h3>
+
+      </div>
+      </div>
+      </div>
+    </div>
+  </form>
+
+</div>
+</body>
+</html>

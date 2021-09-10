@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <style>
+#customer {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customer td, #customer th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customer tr:nth-child(even){background-color: #f2f2f2;}
+
+#customer tr:hover {background-color: #ddd;}
+
+#customer th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image: url({% static 'car-2.jpg' %})">
+<h1 align="center">CUSTOMER DETAILS
+    <form method="post" action="{% url 'list' %}"></h1><h3>
+
+
+<table border="5" align="center" bgcolor="pink" id="customer">
+
+
+        <tr>
+  <b> <th>Customer Id</th> <th>Name</th><th>Address</th><th>Contact</th><th>Email</th> <th>Photo</th><th>ID Proof/th></b></tr>
+        {% for item in m %} <tr>
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.address }}</td>
+        <td>{{ item.contact }}</td>
+        <td>{{ item.email }}</td>
+        <td><img src="/uploads/{{item.u_image}}" height="250" width="200"></td>
+    <td><img src="/uploads/{{item.v_image}}" height="350" width="350"></td>
+    </tr>
+       {% endfor %}
+
+</table></h3>
+
+<input type="Button" name="Ok" value="Ok">
+</form>
+
+</body>
+</html>

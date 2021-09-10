@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+     <style>
+body {background-color: powderblue;}
+h3  {color: white;}
+p   {color: red;}
+body  {text-align:center;}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: white;
+  border: 10;
+  color: black;
+  padding: 10px 28px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+</head>
+<body  style="background-image: url({% static 'rnt.jepg' %})">
+
+<h1> Car Rental </h1>
+
+<form method="post" action="{% url 'rentcalc' %}"  enctype="multipart/form-data">
+{%csrf_token%}
+      <div class="col">
+        <div class="hide-md-lg">
+            <br>
+            <br>
+
+        </div><h3><b>
+          Car id:
+
+
+
+
+          <br><br>
+          Select date From:
+           <input type="date" id="start" name="start">
+          <br><br>
+        Select Date to:
+       <input type="date" id="end" name="end">
+          <br><br>
+        Enter Number of Days:
+           <input type="text" name="email"><br><br>
+
+        <input type="submit" name="Ok" value="Ok">
+          <br>
+          <br>
+         </b></h3>
+
+      </div>
+      </div>
+      </div>
+    </div>
+  </form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+     <script>
+function validateFormr() {
+  var x = document.forms["myForm3"]["id"].value;
+  if (x == "") {
+    alert("Car id must be filled out");
+    return false;
+  }
+
+  var x = document.forms["myForm3"]["start"].value;
+  if (x == "") {
+    alert("Start Date must be filled out");
+    return false;
+  }
+  var x1 = document.forms["myForm3"]["end"].value;
+  if (x1 == "") {
+    alert("End Date must be filled out");
+    return false;
+  }
+  d=new Date();
+  var d1 = new Date(x);
+  var d2 = new Date(x1);
+
+  if (d1 < d){
+    alert(" Enter Valid  Start Date");
+    return false;
+  }
+  if (d2 < d){
+    alert(" Enter Valid  End Date");
+    return false;
+  }
+  if(d2<=d1){
+    alert(" Enter More than 1 day  Duration Between Dates");
+    return false;
+  }
+
+  }
+  </script>
+     <style>
+body {background-color: powderblue;}
+h3  {color: white;}
+p   {color: red;}
+body  {text-align:center;}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: white;
+  border: 10;
+  color: black;
+  padding: 10px 28px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>Renting Cars</title>
+</head>
+<body  style="background-image: url({% static 'rnt.jpg' %})">
+
+<h1> Car Rental </h1>
+
+<form method="post" action="{% url 'rent' %}"  enctype="multipart/form-data" name="myForm3" onsubmit="return validateFormr()">
+{%csrf_token%}
+      <div class="col">
+        <div class="hide-md-lg">
+            <br>
+            <br>
+
+        </div><h3><b>
+          Select Car id:
+
+          <select id="cars" name="id" >
+              {% for item in ca %}
+  <option value="{{ item.id }}">{{ item.id }}</option>
+
+              {% endfor %}
+</select>
+<br><br>
+          Select date From:
+           <input type="date" id="start" name="start">
+          <br><br>
+        Selct Date to:
+       <input type="date" id="end" name="end">
+          <br><br>
+
+
+        <input type="submit" name="Ok" value="Ok" formaction="{% url 'rentcalc' %}" >
+          <br>
+          <br>
+         </b></h3>
+
+      </div>
+      </div>
+      </div>
+    </div>
+  </form>
+
+</div>
+</body>
+</html>

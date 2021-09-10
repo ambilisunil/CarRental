@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image: url({% static 'car-2.jpg' %})">
+<h1 align="center">CUSTOMER DETAILS
+    <form method="post" action="{% url '/list2' %}"></h1><h3>
+
+
+<table border="5" align="center" bgcolor="pink">
+
+
+        <tr>
+  <b>  <th>Name</th><th>Address</th><th>Contact</th><th>Email</th> </b></tr>
+        {% for item in m %} <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.address }}</td>
+        <td>{{ item.contact }}</td>
+        <td>{{ item.email }}</td>
+    </tr>
+       {% endfor %}
+
+</table></h3>
+
+
+</form>
+
+</body>
+</html>

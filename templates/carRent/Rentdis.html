@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+     <style>
+body {background-color: powderblue;}
+h3  {color: black;}
+p   {color: red;}
+body  {text-align:center;}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: white;
+  border: 10;
+  color: black;
+  padding: 10px 28px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>Car Rental</title>
+</head>
+<body  style="background-image: url({% static 'car-2m.jpg' %})">
+
+<h1> Car Rental </h1>
+
+<form method="post"   enctype="multipart/form-data" action="{% url 'rentdisu' %}">
+{%csrf_token%}
+      <div class="col">
+        <div class="hide-md-lg">
+            <br>
+            <br>
+
+        </div><h3><b>
+   Your Bill
+
+<br><br>
+          Start Date:
+           <input type="date" id="start" name="start" value="{{ rnt.dateStart}}" disabled>
+          <br><br>
+        End Date:
+       <input type="date" id="end" name="end" value="{{ rnt.dateEnd}}"disabled>
+          <br><br>
+        No of Days:
+           <input type="text" name="days" value="{{ rnt.dur}}" disabled><br><br>
+           Rent Per Day:
+           <input type="text" name="rpd" value="{{ rnt.rentPerday}}" disabled><br><br>
+           Amount:
+           <input type="text" name="amnt" value="{{ rnt.amnt}}" disabled><br><br>
+            Discount:
+           <input type="text" name="dis" value="{{ rnt.discount}}" disabled><br><br>
+           Final Amount:
+           <input type="text" name="famount" value="{{ rnt.finalAmount}}" disabled><br><br>
+
+        <input type="submit" name="Ok" value="Ok">
+          <br>
+          <br>
+         </b></h3>
+
+      </div>
+      </div>
+      </div>
+    </div>
+  </form>
+
+</div>
+</body>
+</html>

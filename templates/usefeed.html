@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+     <style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image: url({% static 'car-2.jpg' %})">
+<h1 align="center">  Your Feedbacks   </h1>
+    <form method="post" action="{% url 'userfeed' %}"><h3>
+
+<table border="5" align="center" bgcolor="pink" id="customers">
+
+
+        <tr>
+  <b>  <th>Feedback</th>
+        {% for item in f %} <tr>
+        <td>{{ item.feedback }}</td>
+
+    </tr>
+       {% endfor %}
+
+</table></h3>
+
+<input type="Button" name="ok" value="Ok">
+</form>
+
+</body>
+</html>

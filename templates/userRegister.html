@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+        <script>
+function validateForm() {
+  var x = document.forms["myForm"]["Name"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+
+  }
+  var x = document.forms["myForm"]["address"].value;
+  if (x == "") {
+    alert("Adress must be filled out");
+    return false;
+  }
+  var x = document.forms["myForm"]["contact"].value;
+  if (x == "") {
+    alert("Contact must be filled out");
+    return false;
+  }
+  var x = document.forms["myForm"]["username"].value;
+  if (x == "") {
+    alert("User Name must be filled out");
+    return false;
+  }
+  var x = document.forms["myForm"]["email"].value;
+
+  if (x == "") {
+    alert("Email must be filled out");
+    return false;
+  }
+  var x = document.forms["myForm"]["pwd"].value;
+  if (x == "") {
+    alert("Password must be filled out");
+    return false;
+  }
+ var a = document.forms["myForm"]["pwd"].value;
+ var b = document.forms["myForm"]["pwd1"].value;
+   if (a != b) {
+    alert("Passwords must Equal");
+    return false;
+
+  }
+ var cnt = document.forms["myForm"]["contact"].value;
+   var l=cnt.length;
+   if (l != 10) {
+    alert("contact contain 10 digits");
+    return false;
+}
+   if (isNaN(cnt)) {
+    alert("contact have only numbers");
+    return false;
+}
+ var str = document.forms["myForm"]["email"].value;
+   var h=str.includes("@");
+
+   if (h == false) {
+      alert("Invalid Email");
+      return false;
+   }
+}
+
+</script>
+     <style>
+body {background-color: powderblue;}
+h3  {color: white;}
+p   {color: red;}
+body  {text-align:center;}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: white;
+  border: 10;
+  color: black;
+  padding: 10px 28px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+</head>
+<body  style="background-image: url({% static 'regi.jpg' %})">
+
+<h1> User Registration</h1>
+
+<form method="post" action="{% url 'register' %}"  enctype="multipart/form-data" name="myForm" onsubmit="return validateForm()">
+{%csrf_token%}
+      <div class="col">
+        <div class="hide-md-lg">
+            <br>
+
+
+        </div><h3><b>
+          Name:
+
+        <input type="text" name="Name" requred> <br><br>
+          Address:
+           <textarea name="address" cols="20" rows="5"></textarea><br><br>
+
+        Contact:
+        <input type="text" name="contact" requred><br><br>
+          Email:
+           <input type="text" name="email" requred><br><br>
+           User name:
+        <input type="text" name="username" requred><br><br>
+          password:
+           <input type="text" name="pwd" requred><br><br>
+           Retype Passsword:
+           <input type="text" name="pwd1" requred><br><br>
+
+          Pictutre:
+           <input type="file" name="img"><br><br>
+        <input type="submit" name="register" value="register">
+          <br>
+          <br>
+         </b></h3>
+
+      </div>
+      </div>
+      </div>
+    </div>
+  </form>
+
+</div>
+</body>
+</html>

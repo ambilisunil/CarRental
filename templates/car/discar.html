@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Details</title>
+        <style>
+#customer {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customer td, #customer th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customer tr:nth-child(even){background-color: #f2f2f2;}
+
+#customer tr:hover {background-color: #ddd;}
+
+#customer th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}</style>
+</head>
+<body >
+<h1 align="center">Car DETAILS</h1>
+    <form method="post" action="{% url 'retadmin' %}">
+        {%csrf_token%}
+        <h3>
+
+
+<table border="5" align="center" bgcolor="pink" id="customer">
+
+
+        <tr>
+  <b> <th>Car Id</th> <th>Car Name</th><th>Model</th><th>Company</th><th>price</th> <th>Rent per Day</th><th>Photo</th></b></tr>
+        {% for item in dc %} <tr>
+      <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.model }}</td>
+        <td>{{ item.company }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.rentPerDay }}</td>
+        <td><img src="/uploads/{{item.c_image}}" width="200" height="200"></td>
+    </tr>
+       {% endfor %}
+
+</table></h3>
+
+<input type="submit" name="ok" value="Ok" >
+</form>
+
+</body>
+</html>
